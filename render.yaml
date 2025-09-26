@@ -1,5 +1,5 @@
 services:
-  - type: static
+  - type: static_site
     name: shopping-cart
     repo: https://github.com/highcon1/shopping_cart.git
     branch: main
