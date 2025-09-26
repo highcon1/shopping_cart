@@ -66,3 +66,127 @@ main {
 .fa-trash-alt {
   color: #de6b5c;
 }
+
+/* Responsive Enhancements */
+
+/* Make product list responsive */
+.list-products {
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
+  justify-content: center;
+  gap: 20px; /* add spacing between cards */
+  margin-top: 30px;
+  width: 100%; /* let it fill container */
+  max-width: 1200px;
+}
+
+/* Adjust card width */
+.card {
+  flex: 1 1 250px; /* flexible width with min size */
+  max-width: 300px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 890px) {
+  /* Navbar fixed at top */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    margin-bottom: 0;
+  }
+
+  /* Total price fixed directly below navbar */
+  .total-price {
+    position: fixed;
+    top: 56px; /* Bootstrap default navbar height */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    z-index: 1020;
+  }
+
+  /* Prevent overlap */
+  main {
+    width: 100%;          /* make main full width */
+    max-width: 1000px;    /* still limit it a bit */
+    margin: 0 auto;       /* center main */
+    padding-top: 120px;   /* navbar + total price */
+    padding-bottom: 40px;
+  }
+
+  /* Force stacked column layout */
+  .list-products {
+    width: 100%;          /* full width */
+    max-width: 950px;     /* control readability */
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  /* Make cards bigger */
+  .card {
+    flex: 1 1 100%;
+    width: 95%;
+    max-width: 95%;
+    font-size: 1.1rem;
+    padding: 20px;
+  }
+
+  .card img {
+    max-height: 320px; /* larger images */
+    object-fit: contain;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .unit-price {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 16px;
+  }
+
+  /* Total price directly below navbar */
+  .total-price {
+    top: var(--navbar-height, 56px);
+    font-size: 16px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .total-price span {
+    font-size: 18px;
+  }
+
+  .quantity {
+    font-size: 18px;
+  }
+
+  i {
+    font-size: 24px;
+  }
+
+  main {
+    padding-top: calc(var(--navbar-height, 56px) + 60px);
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

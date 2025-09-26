@@ -62,4 +62,3 @@ del.forEach(function(del) {
         //it is better than chaining. 
     })
 })
-
