@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: shopping-cart
+    repo: https://github.com/highcon1/shopping_cart.git
+    branch: main
+    buildCommand: ""           # No build step for plain HTML/CSS/JS
+    staticPublishPath: .       # Use "." if files are in root, or "public" if they're in /public
